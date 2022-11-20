@@ -43,9 +43,9 @@ def filter_non_closed_visits(visits):
         passcard = visit.passcard
         duration = get_duration(visit)
         visit_info = {
-            'who_entered' : passcard.owner_name,
-            'entered_at' : visit.entered_at,
-            'duration' : format_duration(duration)
+            'who_entered': passcard.owner_name,
+            'entered_at': visit.entered_at,
+            'duration': format_duration(duration)
         }
         non_closed_visits.append(visit_info)
     return non_closed_visits

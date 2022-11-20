@@ -48,7 +48,7 @@ def passcard_info_view(request, passcode):
     passcard = get_object_or_404(Passcard, passcode=passcode)
     visits = Visit.objects.filter(passcard=passcard)
     this_passcard_visits = filter_passcard_visits(visits)
-    
+
     context = {
         'passcard': passcard,
         'this_passcard_visits': this_passcard_visits
