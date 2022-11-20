@@ -12,6 +12,7 @@ def get_duration(visit):
     else:
         return visit.leaved_at - visit.entered_at
 
+
 def is_visit_long(visit, minutes=60):
     if visit.leaved_at == None:
         return False
@@ -44,7 +45,6 @@ def filter_passcard_visits(visits):
 
 
 def passcard_info_view(request, passcode):
-    # Программируем здесь
     passcard = get_object_or_404(Passcard, passcode=passcode)
     visits = Visit.objects.filter(passcard=passcard)
     this_passcard_visits = filter_passcard_visits(visits)
