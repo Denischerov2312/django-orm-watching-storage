@@ -2,6 +2,7 @@ from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
 from django.utils.timezone import localtime
+from django.shortcuts import get_object_or_404
 import datetime
 
 
@@ -44,7 +45,7 @@ def filter_passcard_visits(visits):
 
 def passcard_info_view(request, passcode):
     # Программируем здесь
-    passcard = Passcard.objects.get(passcode=passcode)
+    passcard = get_object_or_404(Passcard, passcode=passcode)
     visits = Visit.objects.filter(passcard=passcard)
     this_passcard_visits = filter_passcard_visits(visits)
     
