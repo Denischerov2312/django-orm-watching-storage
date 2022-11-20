@@ -5,7 +5,7 @@ import datetime
 
 
 def is_visit_long(visit, minutes=60):
-    if visit.leaved_at == None:
+    if visit.leaved_at is None:
         return False
     duration = visit.leaved_at - visit.entered_at
     if duration.total_seconds() < minutes * 60:

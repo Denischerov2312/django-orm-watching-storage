@@ -14,7 +14,7 @@ def get_duration(visit):
 
 
 def is_visit_long(visit, minutes=60):
-    if visit.leaved_at == None:
+    if visit.leaved_at is None:
         return False
     duration = get_duration(visit)
     if duration.total_seconds() < minutes * 60:
