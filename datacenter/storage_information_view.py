@@ -4,13 +4,6 @@ from django.utils.timezone import localtime
 import datetime
 
 
-def is_visit_long(visit, minutes=60):
-    if visit.leaved_at is None:
-        return False
-    duration = get_duration(visit)
-    return not duration.total_seconds() < minutes * 60
-
-
 def format_duration(duration):
     seconds = duration.total_seconds()
     hours = seconds // 3600
