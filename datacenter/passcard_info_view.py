@@ -1,16 +1,10 @@
 from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
-from django.utils.timezone import localtime
 from django.shortcuts import get_object_or_404
-import datetime
 
-
-def get_duration(visit):
-    if visit.leaved_at is None:
-        return localtime() - visit.entered_at
-    else:
-        return visit.leaved_at - visit.entered_at
+from datacenter.passcard_view import get_duration
+from datacenter.passcard_view import format_duration
 
 
 def is_visit_long(visit, minutes=60):
@@ -18,14 +12,6 @@ def is_visit_long(visit, minutes=60):
         return False
     duration = get_duration(visit)
     return not duration.total_seconds() < minutes * 60
-
-
-def format_duration(duration):
-    seconds = duration.total_seconds()
-    hours = seconds // 3600
-    minutes = (seconds % 3600) // 60
-    time = datetime.time(hour=int(hours), minute=int(minutes))
-    return time.strftime('%H:%M')
 
 
 def get_passcard_visits(visits):
