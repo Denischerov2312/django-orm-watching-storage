@@ -11,14 +11,6 @@ def is_visit_long(visit, minutes=60):
     return not duration.total_seconds() < minutes * 60
 
 
-def get_long_visits(visits):
-    long_visits = []
-    for visit in visits:
-        if is_visit_long(visit):
-            long_visits.append(visit)
-    return long_visits
-
-
 def format_duration(duration):
     seconds = duration.total_seconds()
     hours = seconds // 3600
