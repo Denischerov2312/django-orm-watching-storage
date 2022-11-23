@@ -19,7 +19,7 @@ def get_duration(visit):
         return visit.leaved_at - visit.entered_at
 
 
-def filter_non_closed_visits(visits):
+def get_non_closed_visits(visits):
     non_closed_visits = []
     for visit in visits:
         passcard = visit.passcard
@@ -35,7 +35,7 @@ def filter_non_closed_visits(visits):
 
 def storage_information_view(request):
     visits = Visit.objects.filter(leaved_at=None)
-    non_closed_visits = filter_non_closed_visits(visits)
+    non_closed_visits = get_non_closed_visits(visits)
     context = {
         'non_closed_visits': non_closed_visits
     }

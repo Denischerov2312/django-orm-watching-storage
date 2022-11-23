@@ -28,7 +28,7 @@ def format_duration(duration):
     return time.strftime('%H:%M')
 
 
-def filter_passcard_visits(visits):
+def get_passcard_visits(visits):
     passcard_visits = []
     for visit in visits:
         duration = get_duration(visit)
@@ -44,7 +44,7 @@ def filter_passcard_visits(visits):
 def passcard_info_view(request, passcode):
     passcard = get_object_or_404(Passcard, passcode=passcode)
     visits = Visit.objects.filter(passcard=passcard)
-    this_passcard_visits = filter_passcard_visits(visits)
+    this_passcard_visits = get_passcard_visits(visits)
 
     context = {
         'passcard': passcard,
