@@ -1,8 +1,8 @@
 from datacenter.models import Visit
 from django.shortcuts import render
 
-from datacenter.passcard_view import get_duration
-from datacenter.passcard_view import format_duration
+from datacenter.visits import get_duration
+from datacenter.visits import format_duration
 
 
 def get_non_closed_visits(visits):
