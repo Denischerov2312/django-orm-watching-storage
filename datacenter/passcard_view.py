@@ -15,3 +15,8 @@ def format_duration(duration):
     minutes = (duration % 3600) // 60
     time = datetime.time(hour=int(hours), minute=int(minutes))
     return time.strftime('%H:%M')
+
+
+def is_visit_long(visit, minutes=60):
+    duration = get_duration(visit)
+    return duration < minutes * 60

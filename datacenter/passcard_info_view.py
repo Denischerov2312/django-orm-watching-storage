@@ -5,11 +5,7 @@ from django.shortcuts import get_object_or_404
 
 from datacenter.passcard_view import get_duration
 from datacenter.passcard_view import format_duration
-
-
-def is_visit_long(visit, minutes=60):
-    duration = get_duration(visit)
-    return not duration < minutes * 60
+from datacenter.passcard_view import is_visit_long
 
 
 def get_passcard_visits(visits):
