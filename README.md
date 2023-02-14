@@ -2,21 +2,18 @@
 Пульт управления охраны банка.
 
 ### Настройка
-В файле `project\settings.py` укажите параметры вашей базы данных. Пример:
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'checkpoint.devman.org',
-        'PORT': '5434',
-        'NAME': 'checkpoint',
-        'USER': 'guard',
-        'PASSWORD': 'osim5',
-    }
-}
-```
-При необходимости измените другие настройки.
+Для настройки базы данных создайте файл `.env` рядом с `manage.py`.
 
+Пример `.env`:
+```
+DB_ENGINE=django.db.backends.postgresql_psycopg2
+DB_HOST=checkpoint.devman.org
+DB_PORT=5534
+DB_NAME=checkpoint
+DB_USER=guarh
+DB_PASSWORD=osim3
+DB_DEBUG=false
+```
 
 ### Как установить
 
