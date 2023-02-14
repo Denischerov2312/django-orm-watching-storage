@@ -13,6 +13,7 @@ DB_NAME=checkpoint
 DB_USER=guarh
 DB_PASSWORD=osim3
 DB_DEBUG=false
+DB_SECRET_KEY=sdf3fdsf3
 ```
 
 ### Как установить
